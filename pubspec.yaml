@@ -54,9 +54,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
   assets:
     - assets/sounds/
     - assets/images/
+
   fonts:
     - family: NotoNaskhArabic
       fonts:
