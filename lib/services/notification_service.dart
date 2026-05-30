@@ -26,7 +26,7 @@ class NotificationService {
           importance: Importance.high,
           priority: Priority.high,
         ),
-        iOS: DarwinNotificationDetails(),
+        iOS: const DarwinNotificationDetails(),
       ),
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
     );
@@ -44,7 +44,7 @@ class NotificationService {
           importance: Importance.high,
           priority: Priority.high,
         ),
-        iOS: DarwinNotificationDetails(),
+        iOS: const DarwinNotificationDetails(),
       ),
     );
   }
