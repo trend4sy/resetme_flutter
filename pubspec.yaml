@@ -38,7 +38,7 @@ dependencies:
   google_sign_in: ^6.2.1
   sign_in_with_apple: ^6.1.0
   # Subscription
-  purchases_flutter: ^7.1.0
+  purchases_flutter: ^8.11.0
   # Utilities
   uuid: ^4.4.0
   json_annotation: ^4.9.0
