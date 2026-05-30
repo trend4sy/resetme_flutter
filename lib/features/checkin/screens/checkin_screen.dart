@@ -236,43 +236,46 @@ class _CheckinScreenState extends State<CheckinScreen> {
             SizedBox(height: 16),
             Text('تم تسجيل حالتك اليوم', style: Theme.of(context).textTheme.headlineMedium),
             SizedBox(height: 24),
-            final r = recommended;
-            if (r != null) ...[
-              Card(
-                child: Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.auto_awesome, color: AppColors.alertWarm),
-                          SizedBox(width: 8),
-                          Text('اقتراح لك', style: Theme.of(context).textTheme.titleMedium),
-                        ],
-                      ),
-                      SizedBox(height: 8),
-                      Text(r.title, style: Theme.of(context).textTheme.titleLarge),
-                      SizedBox(height: 4),
-                      Text('${r.totalMinutes} دقائق'),
-                      SizedBox(height: 16),
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton.icon(
-                          onPressed: () => context.go('/breathing/${r.steps.first.exerciseId ?? 'box_breathing'}'),
-                          icon: Icon(Icons.play_arrow),
-                          label: Text('ابدأ الروتين'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            if (recommended != null) ...[
+              _buildRecommendedCard(context, recommended!),
             ],
             SizedBox(height: 16),
             TextButton(
               onPressed: () => context.go('/home'),
               child: Text('العودة للرئيسية'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRecommendedCard(BuildContext context, Routine routine) {
+    return Card(
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.auto_awesome, color: AppColors.alertWarm),
+                SizedBox(width: 8),
+                Text('اقتراح لك', style: Theme.of(context).textTheme.titleMedium),
+              ],
+            ),
+            SizedBox(height: 8),
+            Text(routine.title, style: Theme.of(context).textTheme.titleLarge),
+            SizedBox(height: 4),
+            Text('${routine.totalMinutes} دقائق'),
+            SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: () => context.go('/breathing/${routine.steps.first.exerciseId ?? 'box_breathing'}'),
+                icon: Icon(Icons.play_arrow),
+                label: Text('ابدأ الروتين'),
+              ),
             ),
           ],
         ),

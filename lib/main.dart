@@ -26,8 +26,7 @@ void main() async {
     await supabaseService.init(supabaseUrl, supabaseKey);
   }
 
-  final subscriptionService = SubscriptionService(hiveService);
-  await subscriptionService.init();
+  await AppDependencies.subscriptionService.init();
 
   final profile = hiveService.getProfile();
   final isDark = profile?.darkMode ?? false;
@@ -41,7 +40,7 @@ class AppDependencies {
   static final moodRepo = MoodRepository(hiveService, supabaseService);
   static final journalRepo = JournalRepository(hiveService, supabaseService);
   static final routineRepo = RoutineRepository();
-  static final analyticsRepo = AnalyticsRepository(moodRepo, journalRepo);
+  static final analyticsRepo = AnalyticsRepository(moodRepo);
   static final subscriptionService = SubscriptionService(hiveService);
   static final audioService = AudioService();
   static final notificationService = NotificationService();
