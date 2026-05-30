@@ -3,7 +3,7 @@ include: package:flutter_lints/flutter.yaml
 linter:
   rules:
     # مؤقتًا: علق القاعدة التي تسبب 366 تحذير
-    # prefer_const_constructors: true
+    prefer_const_constructors: true
     
     prefer_const_declarations: true
     prefer_final_locals: true
