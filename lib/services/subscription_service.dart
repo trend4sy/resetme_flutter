@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../data/models/user_profile.dart';
 import '../data/datasources/local/hive_service.dart';
 import '../core/constants/feature_flags.dart';
 

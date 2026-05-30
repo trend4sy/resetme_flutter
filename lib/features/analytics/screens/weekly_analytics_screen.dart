@@ -104,7 +104,7 @@ class _WeeklyAnalyticsScreenState extends State<WeeklyAnalyticsScreen> {
                           ).toList(),
                           color: AppColors.stressColor(7),
                           barWidth: 2,
-                          dotSize: 4,
+                          dotData: FlDotData(show: true),
                           isCurved: true,
                         ),
                         LineChartBarData(
@@ -113,7 +113,7 @@ class _WeeklyAnalyticsScreenState extends State<WeeklyAnalyticsScreen> {
                           ).toList(),
                           color: AppColors.sleepDark,
                           barWidth: 2,
-                          dotSize: 4,
+                          dotData: FlDotData(show: true),
                           isCurved: true,
                         ),
                       ],

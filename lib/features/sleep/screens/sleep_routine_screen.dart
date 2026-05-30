@@ -40,7 +40,7 @@ class _SleepRoutineScreenState extends State<SleepRoutineScreen> {
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           SizedBox(height: 24),
-          if (_activeRoutine != null)
+            if (_activeRoutine != null)
             ..._activeRoutine!.steps.map((step) => Card(
               child: Padding(
                 padding: EdgeInsets.all(16),
@@ -58,7 +58,7 @@ class _SleepRoutineScreenState extends State<SleepRoutineScreen> {
                         ],
                       ),
                     ),
-                    if (step.isPremium == true && !isPremium)
+                    if (_activeRoutine!.isPremium && !isPremium)
                       Icon(Icons.lock, size: 16, color: AppColors.textSecondary),
                   ],
                 ),

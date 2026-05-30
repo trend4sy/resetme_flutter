@@ -216,8 +216,6 @@ class _CheckinScreenState extends State<CheckinScreen> {
   }
 
   Widget _buildComplete() {
-    final avg = AppDependencies.moodRepo.getWeeklyAverages();
-
     Routine? recommended;
     if (_stress >= 7 || _mood <= 2) {
       recommended = AppDependencies.routineRepo.getRoutineById('stress_breathing');
@@ -238,7 +236,8 @@ class _CheckinScreenState extends State<CheckinScreen> {
             SizedBox(height: 16),
             Text('تم تسجيل حالتك اليوم', style: Theme.of(context).textTheme.headlineMedium),
             SizedBox(height: 24),
-            if (recommended != null) ...[
+            final r = recommended;
+            if (r != null) ...[
               Card(
                 child: Padding(
                   padding: EdgeInsets.all(16),
@@ -253,14 +252,14 @@ class _CheckinScreenState extends State<CheckinScreen> {
                         ],
                       ),
                       SizedBox(height: 8),
-                      Text(recommended.title, style: Theme.of(context).textTheme.titleLarge),
+                      Text(r.title, style: Theme.of(context).textTheme.titleLarge),
                       SizedBox(height: 4),
-                      Text('${recommended.totalMinutes} دقائق'),
+                      Text('${r.totalMinutes} دقائق'),
                       SizedBox(height: 16),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton.icon(
-                          onPressed: () => context.go('/breathing/${recommended.steps.first.exerciseId ?? 'box_breathing'}'),
+                          onPressed: () => context.go('/breathing/${r.steps.first.exerciseId ?? 'box_breathing'}'),
                           icon: Icon(Icons.play_arrow),
                           label: Text('ابدأ الروتين'),
                         ),

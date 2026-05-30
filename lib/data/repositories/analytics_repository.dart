@@ -1,14 +1,11 @@
 import '../models/mood_entry.dart';
-import '../models/journal_entry.dart';
 import '../models/weekly_analysis.dart';
 import 'mood_repository.dart';
-import 'journal_repository.dart';
 
 class AnalyticsRepository {
   final MoodRepository _moodRepo;
-  final JournalRepository _journalRepo;
 
-  AnalyticsRepository(this._moodRepo, this._journalRepo);
+  AnalyticsRepository(this._moodRepo);
 
   WeeklyAnalysis generateWeeklyAnalysis() {
     final now = DateTime.now();

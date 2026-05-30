@@ -70,13 +70,10 @@ class SettingsScreen extends StatelessWidget {
             secondary: Icon(Icons.dark_mode, color: AppColors.sleepDark),
             value: profile?.darkMode ?? false,
             onChanged: (v) {
-              final updated = (profile ?? AppDependencies.hiveService.getProfile() ?? 
-                AppDependencies.hiveService.getProfile() ?? 
-                AppDependencies.hiveService.getProfile() ?? 
-                AppDependencies.hiveService.getProfile() ?? 
-                throw StateError('No profile')).copyWith(darkMode: v);
+              final p = profile ?? AppDependencies.hiveService.getProfile();
+              if (p == null) return;
+              final updated = p.copyWith(darkMode: v);
               AppDependencies.hiveService.saveProfile(updated);
-              // In production, trigger app restart or theme rebuild
             },
             activeColor: AppColors.sleepDark,
           ),

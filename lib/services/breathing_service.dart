@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 
 class BreathingState {
   final String exerciseId;
@@ -76,10 +76,10 @@ class BreathingService {
     List<int> phases,
     List<String> labels,
     int totalCycles,
-    String exerciseId,
+    String exerciseId, {
     int cycleIndex = 0,
     int phaseIndex = 0,
-  ) {
+  }) {
     if (cycleIndex >= totalCycles) {
       _controller?.add(BreathingState(
         isActive: false,
@@ -123,9 +123,9 @@ class BreathingService {
         timer.cancel();
         final nextPhase = phaseIndex + 1;
         if (nextPhase >= phases.length) {
-          _startPhase(phases, labels, totalCycles, exerciseId, cycleIndex + 1, 0);
+          _startPhase(phases, labels, totalCycles, exerciseId, cycleIndex: cycleIndex + 1, phaseIndex: 0);
         } else {
-          _startPhase(phases, labels, totalCycles, exerciseId, cycleIndex, nextPhase);
+          _startPhase(phases, labels, totalCycles, exerciseId, cycleIndex: cycleIndex, phaseIndex: nextPhase);
         }
       }
     });

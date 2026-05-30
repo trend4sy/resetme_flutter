@@ -83,7 +83,7 @@ class SupabaseService {
     if (!isInitialized) return null;
     try {
       final res = await _client.from('app_config').select().single();
-      return res as Map<String, dynamic>;
+      return res;
     } catch (_) {
       return null;
     }
