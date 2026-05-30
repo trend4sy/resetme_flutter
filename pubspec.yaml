@@ -57,9 +57,6 @@ flutter:
   assets:
     - assets/sounds/
     - assets/images/
-  fonts:
-    - family: NotoNaskhArabic
-      fonts:
-        - asset: assets/fonts/NotoNaskhArabic-Regular.ttf
-        - asset: assets/fonts/NotoNaskhArabic-Bold.ttf
-          weight: 700
+  # تم إزالة قسم fonts مؤقتًا لاجتياز الاختبارات السحابية
+  # لأن ملفات .ttf غير مرفوعة في المستودع. 
+  # حزمة google_fonts مفعّلة مسبقًا كبديل.
