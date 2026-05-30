@@ -1,0 +1,57 @@
+# Flutter
+.dart_tool/
+.packages
+build/
+*.iml
+.flutter-plugins
+.flutter-plugins-dependencies
+.dart_tool/package_config.json
+
+# Android
+android/.gradle/
+android/app/build/
+android/local.properties
+*.keystore
+*.jks
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Runner.xcworkspace/xcshareddata/
+ios/Runner.xcodeproj/project.xcworkspace/
+ios/ServiceAccounts/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env.local
+
+# Firebase
+firebase_options.dart
+google-services.json
+GoogleService-Info.plist
+
+# Generated
+*.freezed.dart
+*.g.dart
+*.gr.dart
+*.gen.dart
+
+# Dependencies
+.pub-cache/
+.pub/
+
+# Test
+coverage/
