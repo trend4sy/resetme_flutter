@@ -2,13 +2,16 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class NotificationService {
   final FlutterLocalNotificationsPlugin _local =
-    FlutterLocalNotificationsPlugin();
+      FlutterLocalNotificationsPlugin();
 
   Future<void> init() async {
     const androidSettings = AndroidInitializationSettings('@mipmap/ic_launcher');
     const iosSettings = DarwinInitializationSettings();
     await _local.initialize(
-      InitializationSettings(android: androidSettings, iOS: iosSettings),
+      const InitializationSettings(
+        android: androidSettings,
+        iOS: iosSettings,
+      ),
     );
   }
 
@@ -19,14 +22,14 @@ class NotificationService {
       'ResetMe',
       'كيف كان يومك؟ خذ دقيقة لتسجيل مزاجك',
       RepeatInterval.daily,
-      NotificationDetails(
+      const NotificationDetails(
         android: AndroidNotificationDetails(
           'reminders',
           'تذكيرات يومية',
           importance: Importance.high,
           priority: Priority.high,
         ),
-        iOS: const DarwinNotificationDetails(),
+        iOS: DarwinNotificationDetails(),
       ),
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
     );
@@ -37,14 +40,14 @@ class NotificationService {
       1,
       'وقت النوم',
       'حان وقت روتين النوم. خذ 10 دقائق للاسترخاء',
-      NotificationDetails(
+      const NotificationDetails(
         android: AndroidNotificationDetails(
           'sleep',
           'تذكير النوم',
           importance: Importance.high,
           priority: Priority.high,
         ),
-        iOS: const DarwinNotificationDetails(),
+        iOS: DarwinNotificationDetails(),
       ),
     );
   }
