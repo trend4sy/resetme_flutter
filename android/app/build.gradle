@@ -20,33 +20,48 @@ if (flutterVersionName == null) flutterVersionName = "1.0"
 
 android {
     namespace = "com.resetme.app"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = 34
+    ndkVersion = "26.3.11579264"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17
     }
 
+    sourceSets {
+        main.java.srcDirs += "src/main/kotlin"
+    }
+
     defaultConfig {
         applicationId = "com.resetme.app"
         minSdk = 21
-        targetSdk = flutter.targetSdkVersion
+        targetSdk = 34
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
+        multiDexEnabled = true
     }
 
     buildTypes {
         release {
             signingConfig = signingConfigs.debug
+            shrinkResources false
+            minifyEnabled false
         }
     }
 }
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22"
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.0.4"
+    implementation "androidx.window:window:1.2.0"
+    implementation "androidx.window:window-java:1.2.0"
 }
