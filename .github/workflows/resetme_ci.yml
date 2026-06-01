@@ -59,8 +59,7 @@ jobs:
     timeout-minutes: 45
     # ⚠️ معطل مؤقتًا حتى يتم ترقية مجلد android/ محليًا
     # لإصلاحه: نفّذ محليًا `flutter create -t app . --platforms=android --force` ثم احذف هذا السطر
-    if: false
-
+   
     steps:
       - uses: actions/checkout@v4
 
