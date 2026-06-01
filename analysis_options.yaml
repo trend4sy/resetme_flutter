@@ -7,7 +7,6 @@ analyzer:
 
 linter:
   rules:
-    # تعطيل القواعد التي تسبب فشل CI بسبب التحذيرات
     prefer_const_constructors: false
     prefer_const_declarations: false
     prefer_final_locals: false
