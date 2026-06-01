@@ -57,11 +57,4 @@ flutter:
   assets:
     - assets/sounds/
     - assets/images/
-  # ⚠️ تم تعليق قسم الخطوط لأن ملفات .ttf غير مرفوعة في المستودع
-  # لإعادة التفعيل: أنشئ مجلد assets/fonts/ وارفع الملفين ثم أعد هذا القسم
-  # fonts:
-  #   - family: NotoNaskhArabic
-  #     fonts:
-  #       - asset: assets/fonts/NotoNaskhArabic-Regular.ttf
-  #       - asset: assets/fonts/NotoNaskhArabic-Bold.ttf
-  #         weight: 700
+  # fonts section removed temporarily - add back when .ttf files are uploaded
