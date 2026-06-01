@@ -7,13 +7,6 @@ build/
 .flutter-plugins-dependencies
 .dart_tool/package_config.json
 
-# Android
-android/.gradle/
-android/app/build/
-android/local.properties
-*.keystore
-*.jks
-
 # iOS
 ios/Pods/
 ios/.symlinks/
